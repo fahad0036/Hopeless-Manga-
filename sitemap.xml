@@ -3,7 +3,7 @@
 
   <!-- Homepage -->
   <url>
-    <loc>https://yourwebsite.com/</loc>
+    <loc>https://hopelessmanga.com/</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -11,7 +11,7 @@
 
   <!-- Browse / Manga List Page -->
   <url>
-    <loc>https://yourwebsite.com/browse.html</loc>
+    <loc>https://hopelessmanga.com/browse.html</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -19,19 +19,19 @@
 
   <!-- Individual Manga Pages -->
   <url>
-    <loc>https://yourwebsite.com/manga/naruto.html</loc>
+    <loc>https://hopelessmanga.com/manga/naruto.html</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://yourwebsite.com/manga/one-piece.html</loc>
+    <loc>https://hopelessmanga.com/manga/one-piece.html</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://yourwebsite.com/manga/demon-slayer.html</loc>
+    <loc>https://hopelessmanga.com/manga/demon-slayer.html</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -39,16 +39,17 @@
 
   <!-- Contact / About Pages -->
   <url>
-    <loc>https://yourwebsite.com/contact.html</loc>
+    <loc>https://hopelessmanga.com/contact.html</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
-  </url>
+  </url><www class="hopelessmanga.com"></www>
   <url>
-    <loc>https://yourwebsite.com/about.html</loc>
+    <loc>https://hopelessmanga.com/hopeless-manga.html</loc>
     <lastmod>2026-02-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
-</urlset>
+</urlset>Hopeless Manga
+
