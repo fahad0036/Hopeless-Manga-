@@ -1,0 +1,76 @@
+:root {
+  --bg: #0f1117;
+  --surface: #161b22;
+  --surface-2: #1c2128;
+  --border: #2a2f3a;
+  --text-primary: #f0f3f6;
+  --text-secondary: #9da7b3;
+  --accent: #ff6a00;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --transition-fast: 0.2s ease;
+  --transition-smooth: 0.35s cubic-bezier(.4,0,.2,1);
+}
+
+.light {
+  --bg: #f5f7fa;
+  --surface: #ffffff;
+  --surface-2: #f0f2f5;
+  --border: #e2e6ea;
+  --text-primary: #111;
+  --text-secondary: #555;
+}
+
+* {margin:0;padding:0;box-sizing:border-box;}
+body{font-family:"Inter",sans-serif;background:var(--bg);color:var(--text-primary);transition:0.3s;}
+.container{width:92%;max-width:1320px;margin:auto;}
+.header{position:sticky;top:0;z-index:1000;background:rgba(15,17,23,0.75);backdrop-filter:blur(14px);border-bottom:1px solid var(--border);}
+.nav-container{display:flex;justify-content:space-between;align-items:center;padding:22px 0;}
+.logo{font-weight:800;font-size:20px;color:var(--accent);}
+.nav a{margin:0 18px;text-decoration:none;font-size:14px;font-weight:500;color:var(--text-secondary);transition:color 0.2s;}
+.nav a:hover{color:var(--text-primary);}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.search{padding:9px 14px;width:200px;border-radius:6px;border:1px solid var(--border);background:var(--surface);color:var(--text-primary);}
+.search:focus{outline:none;border-color:var(--accent);}
+#themeBtn{padding:9px 14px;border:none;border-radius:6px;background:var(--accent);color:#fff;cursor:pointer;}
+#themeBtn:hover{opacity:0.9;}
+
+/* SLIDER */
+.slider{position:relative;overflow:hidden;margin-bottom:60px;}
+.slides{position:relative;width:100%;height:400px;}
+.slide{position:absolute;top:0;left:0;width:100%;height:100%;opacity:0;transition:opacity 0.8s ease-in-out;}
+.slide.active{opacity:1;}
+.slide img{width:100%;height:100%;object-fit:cover;border-radius:10px;}
+.slide-content{position:absolute;bottom:30px;left:40px;color:#fff;}
+.slide-content h2{font-size:36px;font-weight:800;margin-bottom:10px;text-shadow:2px 2px 6px rgba(0,0,0,0.7);}
+.slide-content p{font-size:16px;margin-bottom:10px;text-shadow:1px 1px 5px rgba(0,0,0,0.7);}
+.slide-content button{padding:10px 22px;border:none;background:var(--accent);color:#fff;border-radius:6px;cursor:pointer;font-weight:600;transition:0.3s;}
+.slide-content button:hover{transform:translateY(-2px);}
+
+/* Slider controls */
+.slider-controls{position:absolute;top:50%;width:100%;display:flex;justify-content:space-between;transform:translateY(-50%);}
+.slider-controls span{font-size:32px;color:#fff;cursor:pointer;padding:5px 10px;background:rgba(0,0,0,0.4);border-radius:50%;user-select:none;}
+
+/* GRID */
+.section{padding:80px 0;}
+.section-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:40px;}
+.section-header h2{font-size:28px;font-weight:700;}
+.filter{padding:9px 14px;border-radius:6px;border:1px solid var(--border);background:var(--surface);color:var(--text-primary);}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:35px;}
+.card{background:var(--surface);border-radius:16px;overflow:hidden;border:1px solid var(--border);transition:transform 0.35s,box-shadow 0.35s;cursor:pointer;}
+.card:hover{transform:translateY(-10px);box-shadow:0 20px 40px rgba(0,0,0,0.4);}
+.card img{width:100%;height:340px;object-fit:cover;}
+.card-content{padding:18px;}
+.card-content h3{font-size:16px;font-weight:600;margin-bottom:8px;}
+.card-content p{font-size:13px;color:var(--text-secondary);}
+
+/* FOOTER */
+.footer{border-top:1px solid var(--border);padding:50px 0;margin-top:100px;}
+.footer-inner{display:flex;justify-content:space-between;align-items:center;color:var(--text-secondary);font-size:14px;}
+.footer-links a{margin-left:25px;text-decoration:none;color:var(--text-secondary);transition:color 0.2s;}
+.footer-links a:hover{color:var(--text-primary);}
+
+/* RESPONSIVE */
+@media(max-width:992px){.slide-content h2{font-size:28px;}.search{width:150px;}}
+@media(max-width:768px){.nav{display:none;}.slide-content h2{font-size:22px;}.section{padding:70px 0;}}

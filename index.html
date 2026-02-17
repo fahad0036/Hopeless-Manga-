@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MangaVerse – Professional Manga Platform</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="MangaVerse – Read and discover trending manga online for free.">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER / NAVBAR -->
+  <header class="header">
+    <div class="container nav-container">
+      <div class="logo">MangaVerse</div>
+      <nav class="nav">
+        <a href="#">Home</a>
+        <a href="#">Browse</a>
+        <a href="#">Top Rated</a>
+        <a href="#">Upload</a>
+      </nav>
+      <div class="nav-right">
+        <input type="text" placeholder="Search..." class="search">
+        <button id="themeBtn">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- SLIDER / FEATURED MANGA -->
+  <section class="slider">
+    <div class="slides">
+      <div class="slide active">
+        <img src="https://i.imgur.com/5F8h3Tr.jpg" alt="Manga 1">
+        <div class="slide-content">
+          <h2>Naruto</h2>
+          <p>Follow Naruto on his journey to become the Hokage!</p>
+          <button>Read Now</button>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="https://i.imgur.com/TJqJXjF.jpg" alt="Manga 2">
+        <div class="slide-content">
+          <h2>One Piece</h2>
+          <p>Join Luffy and the Straw Hat crew on an epic adventure!</p>
+          <button>Read Now</button>
+        </div>
+      </div>
+      <div class="slide">
+        <img src="https://i.imgur.com/lyhR8dh.jpg" alt="Manga 3">
+        <div class="slide-content">
+          <h2>Demon Slayer</h2>
+          <p>Experience Tanjiro’s fight against demons and save his sister.</p>
+          <button>Read Now</button>
+        </div>
+      </div>
+    </div>
+    <div class="slider-controls">
+      <span class="prev">&#10094;</span>
+      <span class="next">&#10095;</span>
+    </div>
+  </section>
+
+  <!-- MANGA GRID SECTION -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2>Trending Manga</h2>
+        <select class="filter">
+          <option>All</option>
+          <option>Action</option>
+          <option>Romance</option>
+          <option>Fantasy</option>
+        </select>
+      </div>
+
+      <div id="manga-list" class="grid"></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© 2026 MangaVerse. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+<script>
+  // ===================================
+  // Theme Toggle
+  // ===================================
+  const themeBtn = document.getElementById("themeBtn");
+  if(localStorage.getItem("theme") === "light") document.body.classList.add("light");
+  themeBtn.onclick = () => {
+    document.body.classList.toggle("light");
+    localStorage.setItem("theme", document.body.classList.contains("light") ? "light" : "dark");
+  };
+
+  // ===================================
+  // Manga Grid Example (Static)
+  // ===================================
+  const mangas = [
+    {title:"Attack on Titan", cover:"https://i.imgur.com/1m5uB0t.jpg", description:"Fight humanity's ultimate enemy!"},
+    {title:"My Hero Academia", cover:"https://i.imgur.com/FCeJkpG.jpg", description:"Heroes rise in a world of superpowers."},
+    {title:"Tokyo Revengers", cover:"https://i.imgur.com/9bA3l3Q.jpg", description:"Time travel and gang conflicts!"},
+    {title:"Black Clover", cover:"https://i.imgur.com/MV8yzcF.jpg", description:"Asta's journey to become the Wizard King."}
+  ];
+
+  const container = document.getElementById("manga-list");
+  mangas.forEach(manga => {
+    container.innerHTML += `
+      <div class="card">
+        <img src="${manga.cover}" />
+        <div class="card-content">
+          <h3>${manga.title}</h3>
+          <p>${manga.description}</p>
+        </div>
+      </div>
+    `;
+  });
+
+  // ===================================
+  // Slider Functionality
+  // ===================================
+  const slides = document.querySelectorAll('.slide');
+  const prev = document.querySelector('.prev');
+  const next = document.querySelector('.next');
+  let currentSlide = 0;
+
+  function showSlide(index){
+    slides.forEach((s,i) => s.classList.remove('active'));
+    slides[index].classList.add('active');
+  }
+
+  function nextSlide(){
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  function prevSlide(){
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  }
+
+  next.addEventListener('click', nextSlide);
+  prev.addEventListener('click', prevSlide);
+
+  setInterval(nextSlide, 5000); // auto slide every 5 sec
+</script>
+
+</body>
+</html>
